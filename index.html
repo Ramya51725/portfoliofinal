@@ -269,55 +269,72 @@ It helps connect frontend applications with the server smoothly.</p>
           title: "Fitzy",
           desc: "FITZY is my full-stack fitness website project.Users can log in and calculate their BMI using height and weight.Based on BMI, the website provides exercise and diet plans.It includes three categories: Underweight, Normal, and Overweight.This project was built using HTML, CSS, JavaScript, and FastAPI",
           bg: "./assets/fitzy.png",
-          link: "https://ramya51725.github.io/Static_Webpage/",
+          link: "https://fitzyfinal.netlify.app/",
         },
       ];
 
-      let index = 0;
-      const card = document.getElementById("projectCard");
-      const title = document.getElementById("projectTitle");
-      const desc = document.getElementById("projectDesc");
-      const hoverTitle = document.getElementById("hoverTitle");
-      const projectBtn = document.getElementById("projectBtn");
-      const projectHoverLink = document.getElementById("projectHoverLink");
-      function showProject() {
-        const project = projects[index];
-        card.style.backgroundImage = `url(${project.bg})`;
-        title.textContent = project.title;
-        desc.textContent = project.desc;
-        hoverTitle.textContent = project.title;
-        projectBtn.setAttribute("href", project.link);
-        projectHoverLink.setAttribute("href", project.link);
-      }
-      function nextProject() {
-        index = (index + 1) % projects.length;
-        showProject();
-      }
-      function prevProject() {
-        index = (index - 1 + projects.length) % projects.length;
-        showProject();
-      }
-      showProject();
-      document.addEventListener("DOMContentLoaded", () => {
-        const cards = document.querySelectorAll(".journey-card");
-        const train = document.getElementById("train");
-        const track = document.querySelector(".train-track");
-        let index = 0;
-        let direction = 1;
-        let isMoving = false;
-        function moveTrain() {
-          if (isMoving) return;
-          isMoving = true;
-          cards.forEach((card) => card.classList.remove("active"));
-          const card = cards[index];
-          const cardRect = card.getBoundingClientRect();
-          const trackRect = track.getBoundingClientRect();
-          const x = cardRect.left + cardRect.width / 2 - trackRect.left;
-          train.style.transform = `translateX(${x}px)`;
-        }
+let index = 0;
 
-      })
-       
+const card = document.getElementById("projectCard");
+const title = document.getElementById("projectTitle");
+const desc = document.getElementById("projectDesc");
+const hoverTitle = document.getElementById("hoverTitle");
+const projectBtn = document.getElementById("projectBtn");
+const projectHoverLink = document.getElementById("projectHoverLink");
+
+function showProject() {
+  const project = projects[index];
+
+  // background image
+  card.style.backgroundImage = `url(${project.bg})`;
+
+  // text content
+  title.textContent = project.title;
+  desc.textContent = project.desc;
+
+  if (hoverTitle) {
+    hoverTitle.textContent = project.title;
+  }
+
+  // set link safely
+  if (project.link) {
+    projectBtn.href = project.link;
+    projectBtn.target = "_blank";
+
+    if (projectHoverLink) {
+      projectHoverLink.href = project.link;
+      projectHoverLink.target = "_blank";
+    }
+
+    projectBtn.style.pointerEvents = "auto";
+    projectBtn.style.opacity = "1";
+  } else {
+    // disable button if no link
+    projectBtn.removeAttribute("href");
+    projectBtn.style.pointerEvents = "none";
+    projectBtn.style.opacity = "0.5";
+  }
+}
+
+function nextProject() {
+  index++;
+  if (index >= projects.length) {
+    index = 0;
+  }
+  showProject();
+}
+
+function prevProject() {
+  index--;
+  if (index < 0) {
+    index = projects.length - 1;
+  }
+  showProject();
+}
+
+// initial load
+showProject();
+        
       </script>
   </body>
 </html>
