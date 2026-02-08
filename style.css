@@ -407,8 +407,8 @@ font-size: 42px;
     font-size: 16px;
     line-height: 1.8;
     color: #555;
-    text-align: justify;        /* box alignment */
-    text-justify: inter-word;   /* smooth word spacing */
+    text-align: justify;       
+    text-justify: inter-word;   
 }
 .project-card::before {
   pointer-events: none;
@@ -430,7 +430,6 @@ font-size: 42px;
   background-color:#e5e5e5
 }
 
-/* WRAPPER */
 .contact-wrapper {
   max-width: 1200px;
   margin: auto;
@@ -453,7 +452,6 @@ font-size: 42px;
   color: white;
   cursor: pointer;
 }
-/* LEFT SIDE */
 .contact-left h2 {
   font-size: 42px;
   margin-bottom: 15px;
@@ -481,7 +479,6 @@ font-size: 42px;
   color: #ff5fa2;
 }
 
-/* RIGHT SIDE */
 .contact-right {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -512,7 +509,6 @@ font-size: 42px;
   transform: translateY(-10px);
 }
 
-/* FOOTER */
 .footer {
   margin-top: 120px;
   padding-bottom: 20px;
@@ -526,7 +522,6 @@ font-size: 42px;
   color: white;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -572,6 +567,29 @@ font-size: 42px;
     width: 90%;
     text-align: center;
   }
+  .contact
+ {
+    width: 360px;
+
+}
+.project-card
+ {
+    width: 300px;
+}
+
+.home {
+    min-height: 100vh;
+    width: 360px;
+    background: url(./assets/background.jpeg) center / cover no-repeat;
+}
+.namecontent
+ {
+  display: flex;
+  flex-direction: column;
+    gap: 20px;
+    font-size: 22px;
+    color: white;
+}
 
   .image-box {
     display: none;
@@ -599,9 +617,7 @@ font-size: 42px;
     justify-items: center;
   }
 }
-/* ========================= */
-/* MOBILE (max-width: 600px) */
-/* ========================= */
+
 @media (max-width: 600px) {
 
   .navbar {
