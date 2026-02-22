@@ -19,7 +19,7 @@ html {
 
 .navbar {
   display: flex;
-  gap: 500px;
+  gap: 600px;
   padding: 50px 60px;
   font-size: 30px;
   color: white;
@@ -64,205 +64,280 @@ li a {
 li a:hover {
   text-decoration: underline;
 }
+/* ================= SINGLE ABOUT + CERT SECTION ================= */
 
-.about {
+.about-cert-section {
   min-height: 100vh;
-  width: 100%;
-  z-index: -1;
+  padding: 120px 0;
 }
-.about-image {
-  margin-top: 50px;
-}
-.about-container {
+
+/* MAIN CONTAINER */
+.about-cert-container {
+  width: 85%;
+  margin: auto;
   display: flex;
-  padding-top: 200px;
-  /* margin-top: 200px; */
-  justify-content: space-around;
+  gap: 80px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.image-box {
-  margin-top: 30px;
-  margin-left: 30px;
-  width: 400px;
-  height: 300px;
-  position: absolute;
-  background-color: black;
-  z-index: -1;
-}
+
+/* ================= LEFT SIDE - ABOUT TEXT ================= */
+
 .about-text {
-  width: 600px;
-  color: #777;
-  font-size: 18px;
-  line-height: 1.8;
+  flex: 1;
+  min-width: 350px;
 }
+
 .about-text h2 {
   font-size: 42px;
-  font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  position: relative;
   color: #222;
 }
+
+.about-text h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #222;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
 .about-text p {
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.9;
+  margin-bottom: 20px;
   color: #777;
-  margin-bottom: 25px;
-  text-align: justify; /* aligns text evenly in the box */
-  text-justify: inter-word; /* improves spacing between words */
+  text-align: justify;
+  transition: 0.3s ease;
+}
+
+.about-text p:hover {
+  color: #333;
+  transform: translateX(5px);
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.right-side {
+  flex: 1;
+  min-width: 350px;
+}
+
+/* PROFILE IMAGE */
+
+.profile-box {
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-box {
+  width: 400px;
+  height: 300px;
+  background: black;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  z-index: -1;
+  transition: 0.4s ease;
 }
 
 .myimg {
   width: 400px;
   height: 300px;
-}
-.btn {
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.btn:hover {
-  background-color: black;
-  color: white;
+  object-fit: cover;
+  transition: 0.4s ease;
 }
 
-.learning-journey {
-  min-height: 100vh;
-  width: 100%;
-  padding: 80px 20px;
-  text-align: center;
-  background-color: #ffffff;
+.profile-box:hover .myimg {
+  transform: scale(1.05);
 }
 
-.learning-journey h2 {
-  font-size: 42px;
-  font-weight: 500;
-  margin-bottom: 80px;
-  color: #222;
-}
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 300px); /* 3 cards per row */
-  justify-content: center;
-  gap: 40px; /* space between cards */
+.profile-box:hover .image-box {
+  top: 10px;
+  left: 30px;
 }
 
-/* Flip Card */
-.flip-card {
-  width: 300px;
-  height: 360px;
-}
+/* ================= CERTIFICATES ================= */
 
-.flip-inner {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.circle {
-  transform: translateX(-50%);
-  margin-left: 150px;
-  margin-top: 70px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #fff;
-  border: 10px solid;
-  display: flex;
+.certificates h3 {
   font-size: 28px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.percentage {
-  color: black;
-  margin-top: 25px;
-  margin-left: 10px;
-}
-.child1 {
-  border-color: #44fc4b #44fc4b #eaeaea #44fc4b;
-}
-.child2 {
-  border-color: #33c8e5 #33c8e5 #eaeaea #33c8e5;
-}
-.child3 {
-  border-color: #fc297a #eaeaea #eaeaea #fc297a;
-  color: #fc297a;
-}
-.child4 {
-  border-color: #fae14a #eaeaea #eaeaea #fae14a;
-}
-
-.flip-card:hover .flip-inner {
-  transform: rotateY(180deg);
-}
-.head {
-  margin-top: 30px;
-  font-size: 20px;
-  color: black;
-}
-
-/* Front & Back */
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 70%;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  backface-visibility: hidden;
-}
-
-/* Front */
-.flip-front {
-  color: rgb(89, 89, 89);
-  font-family: sans-serif;
-  font-size: 17px;
-  border: 1px solid black;
-  background-color: #e5e5e5;
-}
-
-/* Back */
-.flip-back {
-  color: #fff;
-  transform: rotateY(180deg);
-  background-color: #e5e5e5;
-  border: 1px solid black;
-  font-size: 32px;
-}
-.fa-python {
-  font-size: 50px;
-}
-.fa-html5 {
-  font-size: 50px;
-}
-.fa-css3-alt {
-  font-size: 50px;
-}
-.fa-js {
-  font-size: 50px;
-}
-.fa-database {
-  font-size: 50px;
-}
-.fastapi-icon {
-  font-size: 50px;
-}
-.about {
-  font-size: 10px;
+  margin-bottom: 25px;
   color: #222;
 }
-.flip-front .head {
-  margin-top: 40px;
-  font-size: 23px;
-  margin-bottom: 45px;
+
+.certificate-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
 }
-.flip-front p {
-  margin-left: 40px;
+
+.certificate-card {
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.certificate-card:hover img {
+  transform: scale(1.05);
+}
+
+.certificate-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+}
+
+/* ================= SKILLS WRAPPER ================= */
+
+.skills-wrapper {
+  width: 85%;
+  margin: 60px auto;
+  display: flex;
+  gap: 100px;
+  align-items: stretch; /* important for equal height */
+}
+
+/* LEFT SIDE */
+.skills-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-left h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* RIGHT SIDE */
+.skills-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-right h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* GRID FOR SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  flex-grow: 1; /* makes it fill full height */
+}
+
+/* SKILL CARD */
+.skill-card {
+  background: rgba(109, 107, 107, 0.233);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card i {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.skill-card h4 {
   font-size: 15px;
-  width: 200px;
+  margin-bottom: 4px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* BADGE CONTAINER */
+.badge-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-grow: 1; /* makes height equal */
+}
+
+/* BADGE CARD */
+.badge-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  width: 240px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.badge-card:hover {
+  transform: translateY(-5px);
+}
+
+.badge-card img {
+  width: 150px;
+  margin-bottom: 8px;
+}
+
+.badge-card h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.badge-card p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ICON COLORS */
+.html { color: #ff5722; }
+.css { color: #2196f3; }
+.python { color: #ff4081; }
+.js { color: #f4d03f; }
+.sql { color: #9c27b0; }
+.fastapi { color: #009688; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .skills-wrapper {
+    flex-direction: column;
+  }
 }
 
 .projects {
-  padding: 100px 80px;
+  padding: 0px 80px;
+  padding-bottom: 20px;
   background: #fff;
 }
 .projects h2 {
@@ -283,7 +358,7 @@ li a:hover {
 .project-slider {
   flex: 1;
   padding: 70px;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 .project-card {
   height: 320px;
