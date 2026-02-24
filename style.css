@@ -4,14 +4,17 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 .home {
   min-height: 100vh;
   width: 100%;
   background: url("./assets/background.jpeg") center / cover no-repeat;
 }
+
 .sociallink {
   display: flex;
   gap: 10px;
@@ -19,7 +22,7 @@ html {
 
 .navbar {
   display: flex;
-  gap: 600px;
+  gap: 500px;
   padding: 50px 60px;
   font-size: 30px;
   color: white;
@@ -33,37 +36,46 @@ html {
   font-size: 18px;
   gap: 40px;
 }
+
 li a {
   text-decoration: none;
   color: white;
 }
+
 .content {
   margin-left: 900px;
   margin-top: 250px;
 }
+
 .namecontent {
   display: flex;
   gap: 20px;
   font-size: 22px;
   color: white;
 }
+
 .welcome {
   margin-top: 70px;
 }
+
 .name {
   font-weight: bolder;
   font-size: 100px;
 }
+
 .content p {
   font-size: 20px;
   color: white;
 }
+
 .auto-type {
   margin-left: 10px;
 }
+
 li a:hover {
   text-decoration: underline;
 }
+
 /* ================= SINGLE ABOUT + CERT SECTION ================= */
 
 .about-cert-section {
@@ -165,6 +177,7 @@ li a:hover {
 
 /* ================= CERTIFICATES ================= */
 
+
 .certificates h3 {
   font-size: 28px;
   margin-bottom: 25px;
@@ -178,23 +191,23 @@ li a:hover {
 }
 
 .certificate-card {
-  width: 250px;
+  width: 271px;
   background: white;
-  padding: 15px;
+  padding: 1px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: 0.4s ease;
   cursor: pointer;
 }
 
 .certificate-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .certificate-card img {
   width: 100%;
-  height: 170px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   transition: 0.3s ease;
@@ -218,7 +231,8 @@ li a:hover {
   margin: 60px auto;
   display: flex;
   gap: 100px;
-  align-items: stretch; /* important for equal height */
+  align-items: stretch;
+  /* important for equal height */
 }
 
 /* LEFT SIDE */
@@ -250,7 +264,8 @@ li a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  flex-grow: 1; /* makes it fill full height */
+  flex-grow: 1;
+  /* makes it fill full height */
 }
 
 /* SKILL CARD */
@@ -259,7 +274,7 @@ li a:hover {
   padding: 20px;
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
 }
 
@@ -287,7 +302,8 @@ li a:hover {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  flex-grow: 1; /* makes height equal */
+  flex-grow: 1;
+  /* makes height equal */
 }
 
 /* BADGE CARD */
@@ -297,7 +313,7 @@ li a:hover {
   border-radius: 14px;
   width: 240px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
 }
 
@@ -321,12 +337,29 @@ li a:hover {
 }
 
 /* ICON COLORS */
-.html { color: #ff5722; }
-.css { color: #2196f3; }
-.python { color: #ff4081; }
-.js { color: #f4d03f; }
-.sql { color: #9c27b0; }
-.fastapi { color: #009688; }
+.html {
+  color: #ff5722;
+}
+
+.css {
+  color: #2196f3;
+}
+
+.python {
+  color: #ff4081;
+}
+
+.js {
+  color: #f4d03f;
+}
+
+.sql {
+  color: #9c27b0;
+}
+
+.fastapi {
+  color: #009688;
+}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -340,26 +373,31 @@ li a:hover {
   padding-bottom: 20px;
   background: #fff;
 }
+
 .projects h2 {
   font-size: 42px;
   font-weight: 500;
   text-align: center;
   color: #222;
 }
+
 .projects-sub {
   text-align: center;
   color: #777;
 }
+
 .project-wrapper {
   display: flex;
   align-items: center;
   gap: 60px;
 }
+
 .project-slider {
   flex: 1;
   padding: 70px;
   margin-top: 10px;
 }
+
 .project-card {
   height: 320px;
   border-radius: 20px;
@@ -369,13 +407,16 @@ li a:hover {
   overflow: hidden;
   cursor: pointer;
   border: 1px solid black;
+  transition: background-image 0.5s ease-in-out, transform 0.3s ease;
 }
+
 .project-card::before {
   content: "";
   position: absolute;
   border: 1px;
   background: rgba(0, 0, 0, 0.45);
 }
+
 .project-hover {
   position: absolute;
   inset: 0;
@@ -387,15 +428,18 @@ li a:hover {
   transition: 0.4s ease;
   z-index: 2;
 }
+
 .project-card:hover .project-hover {
   opacity: 1;
 }
+
 .project-hover h4 {
   color: #fff;
   margin-top: 70px;
   font-size: 22px;
   letter-spacing: 1px;
 }
+
 .project-link {
   width: 50px;
   height: 50px;
@@ -409,14 +453,17 @@ li a:hover {
   justify-content: center;
   transition: 0.3s;
 }
+
 .project-link:hover {
   background: #000;
   color: #fff;
 }
+
 .controls {
   margin-top: 20px;
   text-align: center;
 }
+
 .controls button {
   width: 45px;
   height: 45px;
@@ -426,10 +473,13 @@ li a:hover {
   font-size: 20px;
   cursor: pointer;
   margin: 0 8px;
+  transition: 0.3s;
 }
+
 .controls button:hover {
   background: #333;
 }
+
 .project-info {
   flex: 1;
   display: flex;
@@ -437,7 +487,9 @@ li a:hover {
   justify-content: center;
   align-items: flex-start;
   height: 100%;
+  transition: all 0.5s ease-in-out;
 }
+
 .project-btn {
   display: inline-block;
   margin-top: 25px;
@@ -448,21 +500,27 @@ li a:hover {
   font-weight: 600;
   transition: 0.3s ease;
 }
+
 .project-btn:hover {
   background: #000;
   color: #fff;
 }
+
 .project-info h3 {
   font-size: 26px;
   margin-bottom: 20px;
+  transition: opacity 0.5s ease-in-out;
 }
+
 .project-info p {
   font-size: 16px;
   line-height: 1.8;
   color: #555;
   text-align: justify;
   text-justify: inter-word;
+  transition: opacity 0.5s ease-in-out;
 }
+
 .project-card::before {
   pointer-events: none;
 }
@@ -483,6 +541,7 @@ li a:hover {
   gap: 60px;
   align-items: center;
 }
+
 .resume {
   width: 150px;
   border: 2px solid #000;
@@ -492,11 +551,13 @@ li a:hover {
   font-weight: 600;
   transition: 0.3s ease;
 }
+
 .resume:hover {
   background-color: #000;
   color: white;
   cursor: pointer;
 }
+
 .contact-left h2 {
   font-size: 42px;
   margin-bottom: 15px;
@@ -577,6 +638,7 @@ li a:hover {
     gap: 60px;
   }
 }
+
 @media (max-width: 900px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -593,11 +655,13 @@ li a:hover {
 }
 
 @media (max-width: 1024px) {
+
   html,
   body {
     overflow-x: hidden;
     overflow-y: auto;
   }
+
   .resume {
     width: 130px;
   }
@@ -606,6 +670,7 @@ li a:hover {
     grid-template-columns: 1fr;
     width: 300px;
   }
+
   .contact-left {
     grid-template-columns: 1fr;
     width: 300px;
@@ -636,9 +701,11 @@ li a:hover {
     width: 90%;
     text-align: center;
   }
+
   .contact {
     width: 360px;
   }
+
   .project-card {
     width: 300px;
   }
@@ -648,6 +715,7 @@ li a:hover {
     width: 360px;
     background: url(./assets/background.jpeg) center / cover no-repeat;
   }
+
   .namecontent {
     display: flex;
     flex-direction: column;
@@ -744,5 +812,225 @@ li a:hover {
   .footer {
     font-size: 14px;
     width: 320px;
+  }
+}
+
+/* ================= CODING CHALLENGES SECTION ================= */
+
+.coding-challenges {
+  padding: 60px 80px;
+  background: #f9f9f9;
+}
+
+.coding-challenges h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+  position: relative;
+}
+
+.coding-challenges h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.challenge-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
+/* CODE BOX STYLING */
+.code-box {
+  flex: 1.1;
+  min-width: 400px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transform: rotate(-0.5deg);
+  transition: 0.4s ease;
+}
+
+.code-box:hover {
+  transform: rotate(0deg) scale(1.01);
+}
+
+.code-header {
+  background: #333;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #444;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+}
+
+.yellow {
+  background: #ffbd2e;
+}
+
+.green {
+  background: #27c93f;
+}
+
+.file-name {
+  color: #aaa;
+  font-size: 12px;
+  margin-left: 8px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.code-box pre {
+  padding: 15px 20px;
+  margin: 0;
+  color: #dcdcdc;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* SYNTAX HIGHLIGHTING */
+.kd {
+  color: #569cd6;
+}
+
+/* keyword */
+.nf {
+  color: #dcdcaa;
+}
+
+/* function */
+.nx {
+  color: #9cdcfe;
+}
+
+/* name/identifier */
+.o {
+  color: #d4d4d4;
+}
+
+/* operator */
+.p {
+  color: #d4d4d4;
+}
+
+/* punctuation */
+.mi {
+  color: #b5cea8;
+}
+
+/* number */
+.s2 {
+  color: #ce9178;
+}
+
+/* string */
+.k {
+  color: #c586c0;
+}
+
+/* control flow */
+
+/* EXPLANATION BOX STYLING */
+.explanation-box {
+  flex: 0.9;
+  min-width: 320px;
+  padding: 10px 0;
+}
+
+.explanation-box h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.explanation-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+  transition: 0.3s ease;
+}
+
+.explanation-item:hover {
+  transform: translateX(8px);
+}
+
+.explanation-item i {
+  font-size: 20px;
+  color: #000;
+  background: #eee;
+  padding: 12px;
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explanation-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.explanation-item strong {
+  display: block;
+  color: #000;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+/* RESPONSIVE FOR CHALLENGES */
+@media (max-width: 1024px) {
+  .challenge-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .code-box {
+    min-width: 100%;
+    transform: none;
+  }
+
+  .explanation-box {
+    min-width: 100%;
+  }
+
+  .coding-challenges {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .code-box pre {
+    font-size: 11px;
+    padding: 12px;
+  }
+
+  .explanation-box h3 {
+    font-size: 20px;
   }
 }
