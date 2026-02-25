@@ -22,7 +22,7 @@ html {
 
 .navbar {
   display: flex;
-  gap: 500px;
+  gap: 375px;
   padding: 50px 60px;
   font-size: 30px;
   color: white;
