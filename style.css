@@ -175,54 +175,95 @@ li a:hover {
   left: 30px;
 }
 
-/* ================= CERTIFICATES ================= */
+/* ================= FULL-WIDTH HORIZONTAL SCROLLING CERTIFICATES ================= */
 
+.certificates-scroll-box {
+  grid-column: 1 / -1;
+  /* Take full width if in grid */
+  width: 100%;
+  margin-top: 60px;
+}
 
-.certificates h3 {
+.certificates-scroll-box h3 {
   font-size: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   color: #222;
+  text-align: center;
+  position: relative;
 }
 
-.certificate-container {
+.certificates-scroll-box h3::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.certificate-track-box {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.certificate-horizontal-track {
   display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
+  gap: 30px;
+  width: max-content;
+  animation: scrollCertHorizontal 20s linear infinite;
 }
 
-.certificate-card {
-  width: 271px;
-  background: white;
-  padding: 1px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.certificate-horizontal-track:hover {
+  animation-play-state: paused;
+}
+
+.cert-item {
+  width: 300px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
   transition: 0.4s ease;
-  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.certificate-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.cert-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.certificate-card img {
+.cert-item img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  transition: 0.3s ease;
+  border-radius: 10px;
 }
 
-.certificate-card:hover img {
-  transform: scale(1.05);
+.cert-item p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
 }
 
-.certificate-card p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #444;
-  text-align: center;
+@keyframes scrollCertHorizontal {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
+
 
 /* ================= SKILLS WRAPPER ================= */
 
@@ -748,6 +789,11 @@ li a:hover {
   .contact-right {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+  }
+
+  .about-scroll-container {
+    height: 400px;
+    margin-top: 30px;
   }
 }
 
