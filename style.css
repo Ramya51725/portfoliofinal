@@ -79,19 +79,26 @@ li a:hover {
 /* ================= SINGLE ABOUT + CERT SECTION ================= */
 
 .about-cert-section {
-  min-height: 100vh;
-  padding: 120px 0;
+  padding: 100px 0;
+  background-color: #fcfcfc;
+  /* Subtle background for section unity */
 }
 
 /* MAIN CONTAINER */
 .about-cert-container {
   width: 85%;
   margin: auto;
-  display: flex;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 80px;
   align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+  .about-cert-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 }
 
 /* ================= LEFT SIDE - ABOUT TEXT ================= */
@@ -130,6 +137,49 @@ li a:hover {
 .about-text p:hover {
   color: #333;
   transform: translateX(5px);
+}
+
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fdfdfd;
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: 0.3s ease;
+  cursor: default;
+}
+
+.highlight-item i {
+  font-size: 18px;
+  color: #111;
+  transition: 0.3s ease;
+}
+
+.highlight-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.highlight-item:hover {
+  background: #111;
+  border-color: #111;
+  transform: translateY(-5px);
+}
+
+.highlight-item:hover i,
+.highlight-item:hover span {
+  color: #fff;
 }
 
 /* ================= RIGHT SIDE ================= */
@@ -175,48 +225,110 @@ li a:hover {
   left: 30px;
 }
 
-/* ================= FULL-WIDTH HORIZONTAL SCROLLING CERTIFICATES ================= */
 
-.certificates-scroll-box {
+/* ================= STATIC HORIZONTAL ACHIEVEMENT MAP ================= */
+
+.achievement-map-box {
   grid-column: 1 / -1;
-  /* Take full width if in grid */
   width: 100%;
-  margin-top: 60px;
+  padding: 30px 0 50px 0;
+  /* Reduced top padding significantly */
+  background: transparent;
+  overflow-x: auto;
 }
 
-.certificates-scroll-box h3 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #222;
-  text-align: center;
+.achievement-path {
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 220px;
+  /* Reduced vertical space */
+  padding: 0 50px;
 }
 
-.certificates-scroll-box h3::after {
+/* Central Horizontal Line */
+.achievement-path::before {
   content: "";
-  width: 60px;
-  height: 3px;
-  background: #000;
   position: absolute;
-  bottom: -10px;
+  top: 70%;
+  /* Move line down slightly */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #eee;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.map-item {
+  position: relative;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  margin-top: 0;
+  /* Align to top */
+  padding-bottom: 50px;
+  /* Space for dot */
+}
+
+.map-item.right {
+  margin-top: 0;
+  /* All on same line */
+  margin-left: 0;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+/* Connection Dot sitting on the line */
+.map-dot {
+  position: absolute;
+  bottom: -22px;
+  /* Position dot at the bottom of the item */
   left: 50%;
+  width: 45px;
+  height: 45px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 5;
   transform: translateX(-50%);
+  /* Only translate horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-item .cert-item {
+  width: 240px;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .achievement-path {
+    width: max-content;
+    gap: 100px;
+    padding: 0 100px;
+  }
 }
 
 .certificate-track-box {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 20px 0;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  display: none;
+  /* Hide old scrolling components */
 }
 
 .certificate-horizontal-track {
   display: flex;
-  gap: 30px;
+  gap: 50px;
   width: max-content;
-  animation: scrollCertHorizontal 20s linear infinite;
+  animation: scrollCertAttractive 25s linear infinite;
 }
 
 .certificate-horizontal-track:hover {
@@ -224,33 +336,72 @@ li a:hover {
 }
 
 .cert-item {
-  width: 300px;
-  background: #fff;
-  padding: 15px;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 12px;
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.cert-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.02));
+  border-radius: 15px;
+  pointer-events: none;
 }
 
 .cert-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+  border-color: #000;
+  background: #fff;
 }
 
 .cert-item img {
   width: 100%;
-  height: 200px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: 0.5s ease;
+}
+
+.cert-item img.badge-img {
+  height: 130px;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.cert-item:hover img {
+  transform: scale(1.02);
 }
 
 .cert-item p {
   margin-top: 12px;
-  font-size: 15px;
+  font-size: 14px;
   color: #333;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@keyframes scrollCertAttractive {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.33%);
+  }
 }
 
 @keyframes scrollCertHorizontal {
@@ -267,114 +418,105 @@ li a:hover {
 
 /* ================= SKILLS WRAPPER ================= */
 
-.skills-wrapper {
-  width: 85%;
-  margin: 60px auto;
+.skills-team-section {
+  max-width: 1200px;
+  margin: 40px auto;
   display: flex;
-  gap: 100px;
+  gap: 60px;
   align-items: stretch;
-  /* important for equal height */
+  /* Stretch both columns to equal height */
 }
 
-/* LEFT SIDE */
-.skills-left {
-  flex: 1;
+.skills-grid-container {
+  flex: 0 1 600px;
   display: flex;
   flex-direction: column;
 }
 
-.skills-left h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-/* RIGHT SIDE */
-.skills-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.skills-right h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-/* GRID FOR SKILLS */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  flex-grow: 1;
-  /* makes it fill full height */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  height: 100%;
+  /* Ensure grid stretches if needed */
 }
 
-/* SKILL CARD */
-.skill-card {
-  background: rgba(109, 107, 107, 0.233);
-  padding: 20px;
-  border-radius: 14px;
+.skill-card.small {
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-}
-
-.skill-card i {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-.skill-card h4 {
-  font-size: 15px;
-  margin-bottom: 4px;
-}
-
-.skill-card p {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* BADGE CONTAINER */
-.badge-container {
+  transition: 0.3s;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  /* makes height equal */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  /* Vertical spacing instead of box padding */
 }
 
-/* BADGE CARD */
-.badge-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 14px;
-  width: 240px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
-}
-
-.badge-card:hover {
+.skill-card.small:hover {
   transform: translateY(-5px);
 }
 
-.badge-card img {
-  width: 150px;
-  margin-bottom: 8px;
+.skill-card.small i {
+  font-size: 45px;
+  /* Increased icon size */
+  margin-bottom: 12px;
 }
 
-.badge-card h4 {
-  font-size: 14px;
-  margin-bottom: 4px;
+.skill-card.small h4 {
+  font-size: 16px;
+  /* Increased font size */
+  font-weight: 500;
+  margin: 0;
+  color: #333;
 }
 
-.badge-card p {
-  font-size: 14px;
-  font-weight: 600;
+/* TEAM WORK SIDE */
+.team-work-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.team-work-side h3 {
+  font-size: 28px;
+  color: #111;
+  border-bottom: 2px solid #000;
+  width: fit-content;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.team-image-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  /* Take up all remaining vertical space */
+  min-height: 150px;
+  /* Bare minimum */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.team-fader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.1);
+  /* Start slightly zoomed in */
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.team-fader.visible {
+  opacity: 1;
+  transform: scale(1);
+  /* Zoom out to normal size when visible */
 }
 
 /* ICON COLORS */
@@ -402,10 +544,18 @@ li a:hover {
   color: #009688;
 }
 
-/* RESPONSIVE */
+.quick-learner {
+  color: #ff9800;
+}
+
+.team-player {
+  color: #3f51b5;
+}
+
 @media (max-width: 900px) {
-  .skills-wrapper {
+  .skills-team-section {
     flex-direction: column;
+    padding: 0 20px;
   }
 }
 
@@ -420,11 +570,6 @@ li a:hover {
   font-weight: 500;
   text-align: center;
   color: #222;
-}
-
-.projects-sub {
-  text-align: center;
-  color: #777;
 }
 
 .project-wrapper {
@@ -451,53 +596,25 @@ li a:hover {
   transition: background-image 0.5s ease-in-out, transform 0.3s ease;
 }
 
-.project-card::before {
-  content: "";
-  position: absolute;
-  border: 1px;
-  background: rgba(0, 0, 0, 0.45);
-}
-
-.project-hover {
-  position: absolute;
-  inset: 0;
+.project-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 15px;
-  transition: 0.4s ease;
-  z-index: 2;
+  align-items: flex-start;
+  height: 100%;
 }
 
-.project-card:hover .project-hover {
-  opacity: 1;
+.project-info h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
-.project-hover h4 {
-  color: #fff;
-  margin-top: 70px;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-
-.project-link {
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  color: #000;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.project-link:hover {
-  background: #000;
-  color: #fff;
+.project-info p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
 }
 
 .controls {
@@ -521,15 +638,7 @@ li a:hover {
   background: #333;
 }
 
-.project-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  transition: all 0.5s ease-in-out;
-}
+
 
 .project-btn {
   display: inline-block;
@@ -1179,5 +1288,115 @@ li a:hover {
 
   .challenge-card {
     padding: 30px 20px;
+  }
+}
+
+/* ================= HOBBIES SECTION ================= */
+
+.hobbies-section {
+  padding: 100px 0;
+  background: #f9f9f9;
+}
+
+.hobbies-container {
+  width: 85%;
+  margin: auto;
+}
+
+.hobbies-container h2 {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #222;
+  position: relative;
+}
+
+.hobbies-container h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #000;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.hobby-card {
+  position: relative;
+  height: 250px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+.hobby-icon-inner {
+  font-size: 55px;
+  color: #000;
+  margin-bottom: 20px;
+  transition: 0.5s ease;
+}
+
+.hobby-info h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #222;
+  transition: 0.4s ease;
+}
+
+.hobby-info p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #777;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.hobby-card:hover {
+  background: #000;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hobby-card:hover .hobby-icon-inner {
+  color: #fff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.hobby-card:hover .hobby-info h3 {
+  color: #fff;
+}
+
+.hobby-card:hover .hobby-info p {
+  opacity: 1;
+  transform: translateY(0);
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hobby-card {
+    height: 220px;
   }
 }

@@ -18,7 +18,7 @@
       <nav>
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#aboutme" class="active">About Me</a></li>
+          <li><a href="#aboutme" class="active">About & Achievements</a></li>
           <li><a href="#project" class="active">Projects</a></li>
 
           <li>
@@ -41,29 +41,38 @@
     <div class="about-cert-container">
       <!-- LEFT SIDE - ABOUT ME -->
       <div class="about-text">
-        <h2>About Me</h2>
+        <h2>About Me & Achievements</h2>
 
         <p>
-          Hi, I am Ramya from Chennai. After completing my 12th standard, I joined
-          Freshworks STS Software Academy to begin my journey in the IT field.
+          Hi, I am Ramya from Chennai. After completing my 12th standard, I
+          joined Freshworks STS Software Academy to begin my journey in the IT
+          field. I am currently learning Full Stack Development including
+          HTML, CSS, JavaScript, Python, SQL, and the MERN stack. I enjoy
+          building websites, working on backend logic, databases, and APIs. I
+          have completed full-stack projects that helped me understand
+          real-world application development, and I regularly practice coding
+          to improve my problem-solving skills. My goal is to secure an
+          internship as a Full Stack Developer and grow into a skilled
+          software engineer.
         </p>
-
-        <p>
-          I am currently learning Full Stack Development including HTML, CSS,
-          JavaScript, Python, SQL, and the MERN stack. I enjoy building websites,
-          working on backend logic, databases, and APIs.
-        </p>
-
-        <p>
-          I have completed full-stack projects that helped me understand real-world
-          application development. I also practice coding regularly and improve my
-          teamwork skills as a member of the squad “Code Casters.”
-        </p>
-
-        <p>
-          My goal is to secure an internship as a Full Stack Developer and grow into
-          a skilled software engineer.
-        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Chennai, TN</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>STS Academy</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-code"></i>
+            <span>Full Stack</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-medal"></i>
+            <span>Badminton</span>
+          </div>
+        </div>
       </div>
 
       <div class="right-side">
@@ -73,113 +82,99 @@
           <img src="./assets/Ramya_shrink.jpg" class="myimg" alt="Ramya Image" />
         </div>
       </div>
-    </div>
 
-    <!-- HORIZONTAL SCROLLING CERTIFICATES -->
-    <div class="certificates-scroll-box">
-      <h3>Certificates & Achievements</h3>
-      <div class="certificate-track-box">
-        <div class="certificate-horizontal-track">
-          <!-- Set 1 -->
-          <div class="cert-item">
-            <img src="./assets/beststudent.jpg" alt="Best Student" />
-            <p>Best Student (2022-23)</p>
+      <!-- FULL WIDTH SCROLLING CERTIFICATES (INSIDE GRID) -->
+      <!-- STATIC ACHIEVEMENT MAP -->
+      <div class="achievement-map-box">
+        <div class="achievement-path">
+          <!-- Item 1 -->
+          <div class="map-item">
+            <div class="map-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="cert-item">
+              <img src="./assets/beststudent.jpg" alt="Best Student" />
+              <p>Best Student</p>
+            </div>
           </div>
-          <div class="cert-item">
-            <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
-            <p>Taluk Poetry Winner</p>
+
+          <!-- Item 2 -->
+          <div class="map-item right">
+            <div class="map-dot"><i class="fa-solid fa-pen-nib"></i></div>
+            <div class="cert-item">
+              <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
+              <p>Poetry Winner</p>
+            </div>
           </div>
-          <!-- Set 2 -->
-          <div class="cert-item">
-            <img src="./assets/beststudent.jpg" alt="Best Student" />
-            <p>Best Student (2022-23)</p>
+
+          <!-- Item 3 -->
+          <div class="map-item">
+            <div class="map-dot"><i class="fa-solid fa-code"></i></div>
+            <div class="cert-item">
+              <img src="./assets/badge1.png" alt="Problem Solving Badge" class="badge-img" />
+              <p>HackerRank Problem Solving ★★★</p>
+            </div>
           </div>
-          <div class="cert-item">
-            <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
-            <p>Taluk Poetry Winner</p>
-          </div>
-          <!-- Set 3 -->
-          <div class="cert-item">
-            <img src="./assets/beststudent.jpg" alt="Best Student" />
-            <p>Best Student (2022-23)</p>
-          </div>
-          <div class="cert-item">
-            <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
-            <p>Taluk Poetry Winner</p>
-          </div>
-          <!-- Set 4 -->
-          <div class="cert-item">
-            <img src="./assets/beststudent.jpg" alt="Best Student" />
-            <p>Best Student (2022-23)</p>
-          </div>
-          <div class="cert-item">
-            <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
-            <p>Taluk Poetry Winner</p>
+
+          <!-- Item 4 -->
+          <div class="map-item right">
+            <div class="map-dot"><i class="fa-brands fa-python"></i></div>
+            <div class="cert-item">
+              <img src="./assets/badge2.png" alt="Python Badge" class="badge-img" />
+              <p>HackerRank Python ★★</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications Section -->
 
   <section class="projects" id="project">
     <h2>Skills And Projects</h2>
 
-    <div class="skills-wrapper">
-      <!-- LEFT SIDE - SKILLS -->
-      <div class="skills-left">
-        <!-- <h3>My Skills</h3> -->
-
+    <div class="skills-team-section">
+      <!-- LEFT SIDE: SKILLS GRID (4x2) -->
+      <div class="skills-grid-container">
         <div class="skills-grid">
-          <div class="skill-card">
+          <div class="skill-card small">
             <i class="fa-brands fa-html5 html"></i>
             <h4>HTML</h4>
           </div>
-
-          <div class="skill-card">
+          <div class="skill-card small">
             <i class="fa-brands fa-css3-alt css"></i>
             <h4>CSS</h4>
           </div>
-
-          <div class="skill-card">
+          <div class="skill-card small">
             <i class="fa-brands fa-python python"></i>
             <h4>Python</h4>
           </div>
-
-          <div class="skill-card">
+          <div class="skill-card small">
             <i class="fa-brands fa-js js"></i>
             <h4>JavaScript</h4>
           </div>
-
-          <div class="skill-card">
+          <div class="skill-card small">
             <i class="fa-solid fa-database sql"></i>
             <h4>SQL</h4>
           </div>
-
-          <div class="skill-card">
+          <div class="skill-card small">
             <i class="fa-solid fa-server fastapi"></i>
             <h4>FastAPI</h4>
+          </div>
+          <div class="skill-card small">
+            <i class="fa-solid fa-bolt quick-learner"></i>
+            <h4>Quick Learner</h4>
+          </div>
+          <div class="skill-card small">
+            <i class="fa-solid fa-users team-player"></i>
+            <h4>Team Player</h4>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT SIDE - BADGES -->
-      <div class="skills-right">
-        <!-- <h3>HackerRank Badges</h3> -->
-
-        <div class="badge-container">
-          <div class="badge-card">
-            <img src="./assets/badge1.png" alt="Problem Solving Badge" />
-            <h4>Problem Solving</h4>
-            <p>★★★</p>
-          </div>
-
-          <div class="badge-card">
-            <img src="./assets/badge2.png" alt="Python Badge" />
-            <h4>Python</h4>
-            <p>★★</p>
-          </div>
+      <!-- RIGHT SIDE: TEAM WORK IMAGE FADER -->
+      <div class="team-work-side">
+        <div class="team-image-wrapper">
+          <img src="./assets/Squad.jpg" alt="Team Work 1" id="teamImg1" class="team-fader visible">
+          <img src="./assets/dev.jpeg" alt="Team Work 2" id="teamImg2" class="team-fader">
         </div>
       </div>
     </div>
@@ -293,7 +288,6 @@
       strings: [
         "Problem Solving",
         "Web Developement",
-        "Dancing",
         "Reading book",
       ],
       typeSpeed: 150,
@@ -400,12 +394,30 @@
       showProject();
     }
 
-    // Auto-scroll logic
-    let autoScrollInterval = setInterval(nextProject, 3000); // Continuous loop every 3 seconds
+    // Auto-scroll disabled by user
+    // let autoScrollInterval = setInterval(nextProject, 5000); 
+
+    // Team Work Fader Logic
+    const teamImg1 = document.getElementById("teamImg1");
+    const teamImg2 = document.getElementById("teamImg2");
+
+    function rotateTeamImages() {
+      if (teamImg1.classList.contains("visible")) {
+        teamImg1.classList.remove("visible");
+        teamImg2.classList.add("visible");
+      } else {
+        teamImg2.classList.remove("visible");
+        teamImg1.classList.add("visible");
+      }
+    }
+
+    setInterval(rotateTeamImages, 4000); // Change image every 4 seconds
 
     // initial load
     showProject();
   </script>
+  </script>
+  </section>
 </body>
 
 </html>
