@@ -88,7 +88,6 @@
         <div class="achievement-path">
           <!-- Item 1 -->
           <div class="map-item">
-            <div class="map-dot"><i class="fa-solid fa-graduation-cap"></i></div>
             <div class="cert-item">
               <img src="./assets/beststudent.jpg" alt="Best Student" />
               <p>Best Student</p>
@@ -97,7 +96,6 @@
 
           <!-- Item 2 -->
           <div class="map-item right">
-            <div class="map-dot"><i class="fa-solid fa-pen-nib"></i></div>
             <div class="cert-item">
               <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
               <p>Poetry Winner</p>
@@ -106,7 +104,6 @@
 
           <!-- Item 3 -->
           <div class="map-item">
-            <div class="map-dot"><i class="fa-solid fa-code"></i></div>
             <div class="cert-item">
               <img src="./assets/badge1.png" alt="Problem Solving Badge" class="badge-img" />
               <p>HackerRank Problem Solving ★★★</p>
@@ -115,7 +112,6 @@
 
           <!-- Item 4 -->
           <div class="map-item right">
-            <div class="map-dot"><i class="fa-brands fa-python"></i></div>
             <div class="cert-item">
               <img src="./assets/badge2.png" alt="Python Badge" class="badge-img" />
               <p>HackerRank Python ★★</p>
@@ -126,73 +122,74 @@
     </div>
   </section>
 
-
   <section class="projects" id="project">
-    <h2>Skills And Projects</h2>
+    <h2 class="section-title">Skills and Projects</h2>
 
-    <div class="skills-team-section">
-      <!-- LEFT SIDE: SKILLS GRID (4x2) -->
-      <div class="skills-grid-container">
-        <div class="skills-grid">
-          <div class="skill-card small">
-            <i class="fa-brands fa-html5 html"></i>
-            <h4>HTML</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-brands fa-css3-alt css"></i>
-            <h4>CSS</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-brands fa-python python"></i>
-            <h4>Python</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-brands fa-js js"></i>
-            <h4>JavaScript</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-solid fa-database sql"></i>
-            <h4>SQL</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-solid fa-server fastapi"></i>
-            <h4>FastAPI</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-solid fa-bolt quick-learner"></i>
-            <h4>Quick Learner</h4>
-          </div>
-          <div class="skill-card small">
-            <i class="fa-solid fa-users team-player"></i>
-            <h4>Team Player</h4>
-          </div>
+    <div class="portfolio-grid-container">
+      <!-- FIRST 4 SKILLS -->
+      <div class="skills-top">
+        <div class="skill-card"><i class="fa-brands fa-html5 html"></i>
+          <h4>HTML</h4>
+        </div>
+        <div class="skill-card"><i class="fa-brands fa-css3-alt css"></i>
+          <h4>CSS</h4>
+        </div>
+        <div class="skill-card"><i class="fa-brands fa-python python"></i>
+          <h4>Python</h4>
+        </div>
+        <div class="skill-card"><i class="fa-brands fa-js js"></i>
+          <h4>JavaScript</h4>
         </div>
       </div>
 
-      <!-- RIGHT SIDE: TEAM WORK IMAGE FADER -->
-      <div class="team-work-side">
-        <div class="team-image-wrapper">
-          <img src="./assets/Squad.jpg" alt="Team Work 1" id="teamImg1" class="team-fader visible">
-          <img src="./assets/dev.jpeg" alt="Team Work 2" id="teamImg2" class="team-fader">
-        </div>
+      <!-- LIFESKILL IMAGE -->
+      <div class="lifskill-box">
+        <img id="lifeImg" src="./assets/Squad.jpg" alt="Team" style="transition: opacity 0.5s ease;">
       </div>
-    </div>
 
-    <div class="project-wrapper">
-      <div class="project-slider">
-        <div class="project-card" id="projectCard"></div>
-        <div class="controls">
-          <button onclick="prevProject()">&#10094;</button>
-          <button onclick="nextProject()">&#10095;</button>
+      <!-- DESCRIPTION -->
+      <div class="lifskill-desc">
+        <h3>Lifeskill</h3>
+        <p id="lifeDesc">In our Life Skills class, we participated in a project-building challenge where our team created a product called MugMate, which helps keep drinks hot for a longer time. We were very happy to build this project and enjoyed working on it together. Through this experience, we improved our teamwork, communication, and problem-solving skills, and we learned many new things..</p>
+      </div>
+
+      <!-- NEXT 4 SKILLS -->
+      <div class="skills-bottom">
+        <div class="skill-card"><i class="fa-solid fa-database sql"></i>
+          <h4>SQL</h4>
+        </div>
+        <div class="skill-card"><i class="fa-solid fa-server fastapi"></i>
+          <h4>FastAPI</h4>
+        </div>
+        <div class="skill-card"><i class="fa-solid fa-bolt quick-learner"></i>
+          <h4>Quick Learner</h4>
+        </div>
+        <div class="skill-card"><i class="fa-solid fa-users team-player"></i>
+          <h4>Team Player</h4>
         </div>
       </div>
+
+      <!-- PROJECT INFO -->
       <div class="project-info">
-        <h3 id="projectTitle"></h3>
-        <p id="projectDesc"></p>
-        <a id="projectBtn" class="project-btn" target="_blank">
-          View Project
-        </a>
+        <h4 id="projectTitle">Bereshin</h4>
+        <p id="projectDesc">I replicated the Bereshin website using HTML and CSS as a practice project.</p>
+        <a href="#" id="projectBtn" class="project-btn" target="_blank">View Project</a>
+
+        <!-- CONTROLS -->
+        <div class="project-controls">
+          <button onclick="prevProject()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button onclick="nextProject()">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
+
+      <!-- PROJECT IMAGE -->
+      <div class="project-card" id="projectCard">
+      </div>
+
     </div>
   </section>
 
@@ -218,15 +215,13 @@
         </div>
         <h3>Fullstack Website Challenge</h3>
         <p>
-          This function handleWeeks is used to show which week is completed
-          and which week is currently active. It takes two values:
-          currentMonth and currentWeek. First, it calculates the level month
-          (1 or 2) and then finds the total week number. After that, it has a
-          list of 8 weeks (m1w1 to m2w4). It loops through each week and
-          removes old classes like "completed" and "active". If the week
-          number is less than the current week, it adds the "completed" class.
-          If it is the current week, it adds the "active" class. So this
-          function helps to update the week progress on the screen.
+           The initWarmup() function is used to load warm-up exercises from
+            the backend. It first displays the warm-up overlay and determines
+             the correct level based on the user’s current month. Then it retrieves
+              the category ID from local storage and sends a request to the API to 
+              fetch exercises for that level. If exercises are available, it shuffles
+               them, selects six exercises, and displays the first one. If no exercises
+                are found or an error occurs, the overlay is hidden.
         </p>
       </div>
     </div>
@@ -294,129 +289,98 @@
       loop: true,
     });
 
+    // --- Life Skill Rotation Logic ---
+    const lifeskills = [
+      {
+        img: "./assets/Squad.jpg",
+        text: "In our Life Skills class, we participated in a project-building challenge where our team created a product called MugMate, which helps keep drinks hot for a longer time. We were very happy to build this project and enjoyed working on it together. Through this experience, we improved our teamwork, communication, and problem-solving skills, and we learned many new things.."
+      },
+      {
+        img: "./assets/dev.jpeg",
+        text: "I also got a great opportunity to attend DevFest. At DevFest, I met many different people from various backgrounds. I talked with them and learned new ideas and perspectives. I gained knowledge about new technologies and trends. It was an inspiring experience that helped improve my confidence and communication skills"
+      }
+    ];
+
+    let lifeIndex = 0;
+    const lifeImg = document.getElementById("lifeImg");
+    const lifeDesc = document.getElementById("lifeDesc");
+
+    function rotateLifeskill() {
+      lifeIndex = (lifeIndex + 1) % lifeskills.length;
+      if (lifeImg && lifeDesc) {
+        lifeImg.style.opacity = 0;
+        setTimeout(() => {
+          lifeImg.src = lifeskills[lifeIndex].img;
+          lifeDesc.innerText = lifeskills[lifeIndex].text;
+          lifeImg.style.opacity = 1;
+        }, 500);
+      }
+    }
+    setInterval(rotateLifeskill, 4000);
+
+    // --- Project Slider Logic ---
     const projects = [
       {
-        title: "Beresin",
-        desc: "I replicated the Beresin website using HTML and CSS as a practice project. The website is based on a cleaning service that provides office cleaning, house cleaning, carpet cleaning, and kitchen cleaning. I recreated this layout to practice modern website structure, spacing, and responsive design",
-        bg: "./assets/beresin.png",
-        link: "https://ramya51725.github.io/beresin_static/",
-      },
-      {
-        title: "Logo website",
-        desc: "I replicated a doctor-finding website using HTML and CSS as a practice project. The website helps users search and find doctors based on specialization, location, and availability. I recreated this layout to practice modern website structure, clean UI design, spacing, and responsive layouts",
-        bg: "./assets/logo.png",
-        link: "https://ramya51725.github.io/logo_static/",
-      },
-      {
         title: "Quap",
-        desc: "QUAP stands for Quantitative Aptitude. This was my first static project after learning HTML and CSS. The website helps users learn quantitative aptitude by providing important topics, practice questions, and a formula sheet in one place. It makes learning aptitude easier and more organized. I was very excited while creating this project, as it helped me apply my basic web development skills in a real project.",
+        desc: "My first static project! QUAP helps users learn quantitative aptitude with topics, practice questions, and formula sheets in one place. This project helped me strengthen my HTML and CSS skills while improving my understanding of structuring a website. It was a great learning experience and boosted my confidence in web development. ",
         bg: "./assets/quap.png",
         link: "https://ramya51725.github.io/Static_Webpage/",
       },
       {
         title: "Fitzy",
-        desc: "FITZY is my full-stack fitness website project.Users can log in and calculate their BMI using height and weight.Based on BMI, the website provides exercise and diet plans.It includes three categories: Underweight, Normal, and Overweight.This project was built using HTML, CSS, JavaScript, and FastAPI",
+        desc: "A full-stack fitness project where users can calculate their BMI and receive personalized exercise and diet plans based on their results. The project provides a simple and interactive experience for maintaining a healthy lifestyle. It was built using HTML, CSS, JavaScript, and FastAPI, helping me strengthen both frontend and backend development skills.",
         bg: "./assets/fitzy.png",
         link: "https://fitzy-new.vercel.app/",
       },
+      {
+        title: "Beresin",
+        desc: "I replicated the Bereshin website using HTML and CSS as a practice project. It focuses on modern website structure and responsive design for a cleaning service. Through this project, I improved my layout designing skills, learned how to structure sections clearly, and practiced building responsive designs for different screen sizes.",
+        bg: "./assets/beresin.png",
+        link: "https://ramya51725.github.io/beresin_static/",
+      },
+      {
+        title: "Logo website",
+        desc: "A practice project replicating a doctor-finding platform, built to improve my frontend development skills. I focused on creating a clean UI design, proper spacing, and modern layout structures. This project helped me better understand alignment,and user-friendly interface design.",
+        bg: "./assets/logo.png",
+        link: "https://ramya51725.github.io/logo_static/",
+      }
     ];
 
     let index = 0;
-
-    const card = document.getElementById("projectCard");
-    const title = document.getElementById("projectTitle");
-    const desc = document.getElementById("projectDesc");
-    const hoverTitle = document.getElementById("hoverTitle");
+    const projectCard = document.getElementById("projectCard");
+    const projectTitle = document.getElementById("projectTitle");
+    const projectDesc = document.getElementById("projectDesc");
     const projectBtn = document.getElementById("projectBtn");
-    const projectHoverLink = document.getElementById("projectHoverLink");
 
     function showProject() {
       const project = projects[index];
+      if (projectCard && projectTitle && projectDesc && projectBtn) {
+        projectCard.style.backgroundImage = `url(${project.bg})`;
+        projectCard.style.backgroundSize = "cover";
+        projectCard.style.backgroundPosition = "center";
 
-      // Remove classes to reset animations
-      card.classList.remove("project-fade-in");
-      title.classList.remove("text-slide-up");
-      desc.classList.remove("text-slide-up");
-      projectBtn.classList.remove("text-slide-up");
-
-      // Force reflow to allow re-triggering animation
-      void card.offsetWidth;
-
-      // background image
-      card.style.backgroundImage = `url(${project.bg})`;
-
-      title.textContent = project.title;
-      desc.textContent = project.desc;
-
-      if (hoverTitle) {
-        hoverTitle.textContent = project.title;
-      }
-
-      if (project.link) {
+        projectTitle.textContent = project.title;
+        projectDesc.textContent = project.desc;
         projectBtn.href = project.link;
-        projectBtn.target = "_blank";
-
-        if (projectHoverLink) {
-          projectHoverLink.href = project.link;
-          projectHoverLink.target = "_blank";
-        }
-
-        projectBtn.style.pointerEvents = "auto";
-        projectBtn.style.opacity = "1";
-      } else {
-        // disable button if no link
-        projectBtn.removeAttribute("href");
-        projectBtn.style.pointerEvents = "none";
-        projectBtn.style.opacity = "0.5";
       }
-
-      // Add classes back to trigger animations
-      card.classList.add("project-fade-in");
-      title.classList.add("text-slide-up");
-      desc.classList.add("text-slide-up");
-      projectBtn.classList.add("text-slide-up");
     }
 
     function nextProject() {
-      index++;
-      if (index >= projects.length) {
-        index = 0;
-      }
+      index = (index + 1) % projects.length;
       showProject();
     }
 
     function prevProject() {
-      index--;
-      if (index < 0) {
-        index = projects.length - 1;
-      }
+      index = (index - 1 + projects.length) % projects.length;
       showProject();
     }
-
-    // Auto-scroll disabled by user
-    // let autoScrollInterval = setInterval(nextProject, 5000); 
-
-    // Team Work Fader Logic
-    const teamImg1 = document.getElementById("teamImg1");
-    const teamImg2 = document.getElementById("teamImg2");
-
-    function rotateTeamImages() {
-      if (teamImg1.classList.contains("visible")) {
-        teamImg1.classList.remove("visible");
-        teamImg2.classList.add("visible");
-      } else {
-        teamImg2.classList.remove("visible");
-        teamImg1.classList.add("visible");
-      }
-    }
-
-    setInterval(rotateTeamImages, 4000); // Change image every 4 seconds
 
     // initial load
     showProject();
   </script>
-  </script>
-  </section>
+</body>
+
+</html>
 </body>
 
 </html>
