@@ -38,7 +38,6 @@
 
   <section class="about-cert-section" id="aboutme">
     <div class="about-cert-container">
-      <!-- LEFT SIDE - ABOUT ME -->
       <div class="about-text">
         <h2>About Me & Achievements</h2>
 
@@ -75,18 +74,14 @@
       </div>
 
       <div class="right-side">
-        <!-- PROFILE IMAGE (MAIN) -->
         <div class="profile-box">
           <div class="image-box"></div>
           <img src="./assets/Ramya_shrink.jpg" class="myimg" alt="Ramya Image" />
         </div>
       </div>
 
-      <!-- FULL WIDTH SCROLLING CERTIFICATES (INSIDE GRID) -->
-      <!-- STATIC ACHIEVEMENT MAP -->
       <div class="achievement-map-box">
         <div class="achievement-path">
-          <!-- Item 1 -->
           <div class="map-item">
             <div class="cert-item">
               <img src="./assets/beststudent.jpg" alt="Best Student" />
@@ -94,7 +89,6 @@
             </div>
           </div>
 
-          <!-- Item 2 -->
           <div class="map-item right">
             <div class="cert-item">
               <img src="./assets/poetry.jpeg" alt="Poetry Holder" />
@@ -102,7 +96,6 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
           <div class="map-item">
             <div class="cert-item">
               <img src="./assets/badge1.png" alt="Problem Solving Badge" class="badge-img" />
@@ -110,7 +103,6 @@
             </div>
           </div>
 
-          <!-- Item 4 -->
           <div class="map-item right">
             <div class="cert-item">
               <img src="./assets/badge2.png" alt="Python Badge" class="badge-img" />
@@ -126,7 +118,7 @@
     <h2 class="section-title">Skills and Projects</h2>
 
     <div class="portfolio-grid-container">
-8      <div class="skills-top">
+      <div class="skills-top">
         <div class="skill-card"><i class="fa-brands fa-html5 html"></i>
           <h4>HTML</h4>
         </div>
@@ -141,23 +133,20 @@
         </div>
       </div>
 
-      <!-- LIFESKILL IMAGE -->
       <div class="lifskill-box">
         <img id="lifeImg" src="./assets/Squad.jpg" alt="Team" style="transition: opacity 0.5s ease;">
       </div>
 
-      <!-- DESCRIPTION -->
       <div class="lifskill-desc">
         <h3>Lifeskill</h3>
         <p id="lifeDesc">In our Life Skills class, we participated in a project-building challenge where our team created a product called MugMate, which helps keep drinks hot for a longer time. We were very happy to build this project and enjoyed working on it together. Through this experience, we improved our teamwork, communication, and problem-solving skills, and we learned many new things..</p>
       </div>
 
-      <!-- NEXT 4 SKILLS -->
       <div class="skills-bottom">
         <div class="skill-card"><i class="fa-solid fa-database sql"></i>
           <h4>SQL</h4>
         </div>
-        <div class="skill-card"><i class="fa-solid fa-server fastapi"></i>
+        <div class="skill-card"><i class="fa-solid fa-bolt"></i>
           <h4>FastAPI</h4>
         </div>
         <div class="skill-card"><i class="fa-solid fa-bolt quick-learner"></i>
@@ -168,13 +157,11 @@
         </div>
       </div>
 
-      <!-- PROJECT INFO -->
       <div class="project-info">
         <h4 id="projectTitle">Beresin</h4>
         <p id="projectDesc">I replicated the Bereshin website using HTML and CSS as a practice project.</p>
         <a href="#" id="projectBtn" class="project-btn" target="_blank">View Project</a>
 
-        <!-- CONTROLS -->
         <div class="project-controls">
           <button onclick="prevProject()">
             <i class="fa-solid fa-arrow-left"></i>
@@ -185,7 +172,6 @@
         </div>
       </div>
 
-      <!-- PROJECT IMAGE -->
       <div class="project-card" id="projectCard">
       </div>
 
@@ -228,7 +214,6 @@
 
   <section class="contact" id="contact">
     <div class="contact-wrapper">
-      <!-- LEFT SIDE -->
       <div class="contact-left">
         <h2>Feel free to hit me up.</h2>
         <p>I’m looking forward to hearing from you.</p>
@@ -288,7 +273,6 @@
       loop: true,
     });
 
-    // --- Life Skill Rotation Logic ---
     const lifeskills = [
       {
         img: "./assets/Squad.jpg",
@@ -317,7 +301,6 @@
     }
     setInterval(rotateLifeskill, 4000);
 
-    // --- Project Slider Logic ---
     const projects = [
       {
         title: "Quap",
@@ -374,7 +357,6 @@
       showProject();
     }
 
-    // initial load
     showProject();
   </script>
 </body>
